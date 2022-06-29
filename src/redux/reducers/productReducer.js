@@ -1,12 +1,12 @@
 import { ActionTypes } from "../constants/actionTypes";
 
 const initialState = {
-  products: [{ id: 1, title: "Dipesh", category: "programmer" }],
+  products: [],
 };
 
 export const productReducer = (state = initialState, action) => {
   if (action.type === ActionTypes.SET_PRODUCTS) {
-    return state;
+    return { ...state, products: action.payload };
   }
 
   return state;
