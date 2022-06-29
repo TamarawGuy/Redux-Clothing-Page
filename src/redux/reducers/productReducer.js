@@ -11,3 +11,10 @@ export const productReducer = (state = initialState, action) => {
 
   return state;
 };
+
+export const selectedProductReducer = (state = {}, action) => {
+  if (action.type === ActionTypes.SELECTED_PRODUCTS) {
+    return { ...state, ...action.payload };
+  }
+  return state;
+};
