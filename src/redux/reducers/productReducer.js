@@ -18,3 +18,10 @@ export const selectedProductReducer = (state = {}, action) => {
   }
   return state;
 };
+
+export const removeSelectedProduct = (state, action) => {
+  if (action.type === ActionTypes.REMOVE_SELECTED_PRODUCTS) {
+    return {};
+  }
+  return state;
+};
