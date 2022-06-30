@@ -5,6 +5,23 @@ import {
   fetchProduct,
   removeSelectedproduct,
 } from "../redux/actions/productActions";
+import styled from "styled-components";
+
+const Container = styled.div``;
+
+const Wrapper = styled.div``;
+
+const ImageContainer = styled.div``;
+
+const TextWrapper = styled.div``;
+
+const Title = styled.span``;
+
+const Price = styled.span``;
+
+const Category = styled.span``;
+
+const Description = styled.p``;
 
 const ProductDetails = () => {
   const product = useSelector((state) => state.product);
@@ -20,7 +37,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   return (
-    <div className="ui grid container">
+    <Container className="ui grid container">
       {Object.keys(product).length === 0 ? (
         <div>...Loading</div>
       ) : (
@@ -51,7 +68,7 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 
