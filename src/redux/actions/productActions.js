@@ -1,4 +1,15 @@
 import { ActionTypes } from "../constants/actionTypes";
+import api from "../../apis/shikiShopApi";
+
+export const fetchProducts = () => async (dispatch) => {
+  const response = await api.get("/products");
+  dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: response.data });
+};
+
+export const fetchProduct = (id) => async (dispatch) => {
+  const response = await api.get(`/products/${id}`);
+  dispatch({ type: ActionTypes.SELECTED_PRODUCTS, payload: response.data });
+};
 
 export const setProducts = (products) => {
   return {
